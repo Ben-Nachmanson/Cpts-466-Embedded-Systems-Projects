@@ -1,0 +1,62 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -depth 3
+Relation:     Data
+Instances:    12480
+Attributes:   3
+              Temp
+               photo
+               Light
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+
+RandomTree
+==========
+
+ photo < 97.5
+|    photo < 27.5
+|   |    photo < 11.5 : Off (1539/0)
+|   |    photo >= 11.5 : Off (2338/14)
+|    photo >= 27.5
+|   |    photo < 81.5 : On (937/387)
+|   |    photo >= 81.5 : Off (2556/95)
+ photo >= 97.5
+|    photo < 174.5
+|   |    photo < 146.5 : On (737/21)
+|   |    photo >= 146.5 : On (799/178)
+|    photo >= 174.5
+|   |    photo < 324 : On (3462/27)
+|   |    photo >= 324 : On (112/53)
+
+Size of the tree : 15
+Max depth of tree: 3
+
+Time taken to build model: 0.11 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances       11772               94.3269 %
+Incorrectly Classified Instances       708                5.6731 %
+Kappa statistic                          0.8856
+Mean absolute error                      0.0861
+Root mean squared error                  0.2101
+Relative absolute error                 17.4642 %
+Root relative squared error             42.3245 %
+Total Number of Instances            12480     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.927    0.036    0.971      0.927    0.948      0.887    0.981     0.984     Off
+                 0.964    0.073    0.912      0.964    0.937      0.887    0.981     0.973     On
+Weighted Avg.    0.943    0.052    0.945      0.943    0.943      0.887    0.981     0.979     
+
+=== Confusion Matrix ===
+
+    a    b   <-- classified as
+ 6477  513 |    a = Off
+  195 5295 |    b = On
+
